@@ -1,0 +1,584 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Tapestry&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+body {
+    height: 100vh;
+    background-color: aquamarine;
+
+}
+
+.progress {
+    background-color: rgb(225, 107, 10);
+    height: 2px;
+    width: 100%;
+    animation: progress 1s 1s 1 ease-in-out;
+}
+
+@keyframes progress {
+    0% {
+        width: 0px;
+    }
+
+    40% {
+        width: 60%;
+        background-color: #ed1717;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+main {
+    height: 78vh;
+}
+
+nav ul li {
+    float: left;
+    list-style: none;
+    padding: 9px;
+    border: 2px solid rgb(25, 171, 212);
+    margin: 3px 2px 0px;
+    background-color: black;
+    border-radius: 3px;
+    border-left: rgb(231, 111, 19) 2px solid;
+    border-right: #f07e0d 2px solid;
+    box-shadow: 0.5px 2px 2px 2px rgb(96, 131, 59);
+
+}
+
+nav ul li:hover {
+    float: left;
+    list-style: none;
+    padding: 9px;
+    border: 2px solid rgb(236, 122, 29);
+    margin: 3px 2px 0px;
+    background-color: rgb(27, 183, 183);
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px orange;
+
+}
+
+nav ul {
+    height: 50px;
+    border: 2px solid slateblue;
+    background: #CE5937;
+    background: -moz-linear-gradient(left, #CE5937 0%, #1C6EA4 51%, #C59237 100%);
+    background: -webkit-linear-gradient(left, #CE5937 0%, #1C6EA4 51%, #C59237 100%);
+    background: linear-gradient(to right, #CE5937 0%, #1C6EA4 51%, #C59237 100%);
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: wheat;
+    font-size: medium;
+    /* padding: 20px; */
+    font-variant: small-caps;
+    /* font-style: bold; */
+    text-shadow: 1px 1px 1px rgb(186, 58, 26);
+}
+
+nav ul li a:hover {
+    color: rgb(25, 103, 236);
+    text-decoration: none;
+    font-variant: small-caps;
+    /* padding: 20px; */
+    text-shadow: 1px 1px 1px black;
+}
+
+.left {
+    float: right;
+}
+
+.left:hover {
+    float: right;
+}
+
+#footer {
+    height: 30px;
+    border: 2px solid slateblue;
+    background-color: black;
+}
+
+#footer p {
+    text-decoration: none;
+    color: wheat;
+    font-size: medium;
+    /* padding: 20px; */
+    font-variant: small-caps;
+    /* font-style: bold; */
+    text-shadow: 1px 1px 1px rgb(186, 58, 26);
+    text-align: center;
+    animation: fanim 1s 1s infinite ease-in-out;
+    padding: 4px;
+}
+
+#footer p:hover {
+    text-decoration: none;
+    color: rgb(11, 201, 17);
+    font-size: medium;
+    /* padding: 20px; */
+    font-variant: small-caps;
+    /* font-style: bold; */
+    text-shadow: 1px 1px 1px rgb(186, 58, 26);
+    text-align: center;
+    padding: 4px;
+}
+
+#aidlast {
+    text-decoration: none;
+    color: wheat;
+    font-size: medium;
+    /* padding: 20px; */
+    font-variant: small-caps;
+    /* font-style: bold; */
+    text-shadow: 1px 1px 1px rgb(14, 13, 13);
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(186, 58, 26);
+    animation: fanim 1s 1s infinite ease-in-out;
+}
+
+#aidlast:hover {
+    text-decoration: none;
+    color: rgb(11, 201, 17);
+    font-size: medium;
+    /* padding: 20px; */
+    font-variant: small-caps;
+    /* font-style: bold; */
+    text-shadow: 1px 1px 1px rgb(186, 58, 26);
+
+}
+
+@keyframes fanim {
+    0% {
+        text-decoration: none;
+        color: wheat;
+        font-size: medium;
+        /* padding: 20px; */
+        font-variant: small-caps;
+        /* font-style: bold; */
+        text-shadow: 1px 1px 1px rgb(14, 13, 13);
+        text-align: center;
+        text-shadow: 1px 1px 1px rgb(186, 58, 26);
+    }
+
+    50% {
+        text-decoration: none;
+        color: rgb(11, 201, 17);
+        font-size: medium;
+        /* padding: 20px; */
+        font-variant: small-caps;
+        /* font-style: bold; */
+        text-shadow: 1px 1px 1px rgb(186, 58, 26);
+
+    }
+
+    100% {
+        text-decoration: none;
+        color: rgb(55, 10, 236);
+        font-size: medium;
+        /* padding: 20px; */
+        font-variant: small-caps;
+        /* font-style: bold; */
+        text-shadow: 1px 1px 1px rgb(186, 58, 26);
+
+    }
+
+}
+
+#loginTable {
+    background: #14CE14;
+    background: -moz-linear-gradient(45deg, #14CE14 0%, #A4A22F 32%, #30B2C5 100%);
+    background: -webkit-linear-gradient(45deg, #14CE14 0%, #A4A22F 32%, #30B2C5 100%);
+    background: linear-gradient(45deg, #14CE14 0%, #A4A22F 32%, #30B2C5 100%);
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 25vh;
+    align-items: center;
+    width: 25vw;
+    margin: 25vw 69vw;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    box-shadow: 1px 5px 5px 5px rgb(31, 30, 30);
+    animation: daewle 5s 1s 1 ease-in-out;
+}
+
+@keyframes daewle {
+    0% {
+        margin: 2vw 3vw;
+        background-color: lightgreen;
+
+    }
+
+    20% {
+        margin: 80vw 3vw;
+        height: 20vw;
+        width: 15vw;
+        border: royalblue;
+        color: #ed7717;
+        border-radius: 20vw;
+
+
+        -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+
+    40% {
+        margin: 40vw 44vw;
+
+        height: 20vw;
+        width: 15vw;
+        border: rgb(214, 225, 65);
+        color: #ed1717;
+        border-radius: 20vw;
+        background-color: lightgreen;
+
+    }
+
+    60% {
+        margin: 2vw 44vw;
+        -webkit-box-shadow: 7px -5px 10px 0px #4B0082, 11px -9px 10px 0px #0000FF, 16px -14px 10px 0px #00FF00, 20px -17px 10px 0px #FFFF00, 24px -19px 10px 0px #FF7F00, 27px -23px 10px 0px #FF0000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 7px -5px 10px 0px #4B0082, 11px -9px 10px 0px #0000FF, 16px -14px 10px 0px #00FF00, 20px -17px 10px 0px #FFFF00, 24px -19px 10px 0px #FF7F00, 27px -23px 10px 0px #FF0000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        background-color: lightgreen;
+    }
+
+    80% {
+        margin: 2vw 69vw;
+    }
+
+}
+
+#username,
+#password,
+#name,
+#useremail,
+#retypepassword,
+#date {
+    background-color: lightgreen;
+    width: 80%;
+    height: 45%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #f07e0d;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+#LoginButton {
+    width: 30%;
+    height: 60%;
+    background-color: lightgreen;
+    box-shadow: 1px 1px 1px #f07e0d;
+    border-radius: 5px;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+#LoginButton:hover {
+    width: 30%;
+    height: 60%;
+    background-color: #ed7717;
+    box-shadow: 0.5px 1px 1px 1px black;
+    border-radius: 5px;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+#signUpTable {
+    background: #14CE14;
+    background: -moz-linear-gradient(45deg, #14CE14 0%, #A4A22F 32%, #30B2C5 100%);
+    background: -webkit-linear-gradient(45deg, #14CE14 0%, #A4A22F 32%, #30B2C5 100%);
+    background: linear-gradient(45deg, #14CE14 0%, #A4A22F 32%, #30B2C5 100%);
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 60vh;
+    width: 30vw;
+    font-size: large;
+    margin: 5vw 35vw;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+
+
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0, 0, 0, 0.1), 0px 6px 0px 4px rgba(0, 0, 0, 0.1), 0px 9px 0px 6px rgba(0, 0, 0, 0.1), 0px 12px 0px 8px rgba(0, 0, 0, 0.1), 0px 15px 0px 10px rgba(0, 0, 0, 0.1), 0px 18px 0px 12px rgba(0, 0, 0, 0.1), 0px 21px 0px 14px rgba(0, 0, 0, 0.1), 0px 24px 0px 16px rgba(0, 0, 0, 0.1), 0px 27px 0px 18px rgba(0, 0, 0, 0.1), 0px 30px 0px 20px rgba(0, 0, 0, 0.1), 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 1px 3px 0px 2px rgba(0, 0, 0, 0.1), 1px 6px 0px 4px rgba(0, 0, 0, 0.1), 1px 9px 0px 6px rgba(0, 0, 0, 0.1), 1px 12px 0px 8px rgba(0, 0, 0, 0.1), 1px 15px 0px 10px rgba(0, 0, 0, 0.1), 0px 18px 0px 12px rgba(0, 0, 0, 0.1), 0px 21px 0px 14px rgba(0, 0, 0, 0.1), 0px 24px 0px 16px rgba(0, 0, 0, 0.1), 0px 27px 0px 18px rgba(0, 0, 0, 0.1), 0px 30px 0px 20px rgba(0, 0, 0, 0.1), 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#addstudent {
+    width: 30%;
+    height: 60%;
+    background-color: lightgreen;
+    box-shadow: 1px 1px 1px #f07e0d;
+    border-radius: 5px;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+#addstudent:hover {
+    width: 30%;
+    height: 60%;
+    background-color: #f07e0d;
+    box-shadow: 1px 1px 1px #f07e0d;
+    border-radius: 5px;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+#inst {
+    /* background-color: black; */
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+    color: #f07e0d;
+}
+
+marquee {
+    background-color: black;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #f07e0d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#loginMarquee {
+    background-color: black;
+    margin-bottom: 10px;
+    height: 40px;
+    text-align: center;
+    color: #f07e0d;
+    font-size: small;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#maininstrack {
+    width: 1200px;
+    align-items: center;
+    font-size: 20px;
+   color: black;
+    margin: 5px 80px;
+    font-family: 'Libre Baskerville', serif;
+}
+#maininstrack h2{
+ color: #4B0082;
+  text-shadow: 0.2px 0.5px 0.5px  rgb(243, 81, 81); 
+
+}
+
+
+#startExamBtn {
+    margin: 20px 400px;
+    background-color: aqua;
+    height: 40px;
+    width: 120px;
+    border-radius: 2px;
+ 
+ 
+    -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 13px 27px 41px -4px rgba(0,0,0,0.8); 
+    box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 13px 27px 41px -4px rgba(0,0,0,0.8);
+    color: rgb(31, 27, 235); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; text-shadow: 0.2px 0.5px 0.5px black;
+}
+
+#startExamBtn:hover {
+    background-color: #55f56f;
+    color: chocolate;
+
+}
+
+.myquestionsClass {
+    width: 600px;
+    /* height: 300px; */
+    align-items: center;
+    margin: 5px 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+
+
+#previousButton,
+#finalButton,
+#nextButton {
+    margin: 40px 10px;
+    background-color: aqua;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    color: rgb(237, 148, 23);
+    text-shadow: 0.5px 0.5px 0.5px rgb(187, 222, 14);
+
+}
+
+#previousButton:hover,
+#finalButton:hover,
+#nextButton:hover {
+    margin: 40px 10px;
+    background-color: rgb(25, 230, 210);
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    color: rgb(237, 55, 23);
+    text-shadow: 0.5px 0.5px 0.5px rgb(187, 222, 14);
+
+}
+
+.bSameLine {
+    display: flex;
+    align-items: baseline;
+    flex-direction: left;
+}
+
+#yourfeedBack{
+    margin-top: 5vw;
+}
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: coral;
+    margin-bottom: 40vh;
+}
+
+.contact .content {
+    max-width: 1000px;
+    text-align: center;
+}
+
+.contact .content h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: rgb(15, 32, 179);
+}
+
+.contact .content p {
+    font-weight: 300;
+    color: rgb(26, 147, 184);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px 40px;
+}
+
+
+/* .content {
+    margin: 50px;
+} */
+
+.container .contactInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .contactInfo .box {
+    position: relative;
+    padding: 20px 0px;
+    display: flex;
+}
+
+.container .contactInfo .box .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30%;
+    /* background-color: aqua; */
+}
+
+.container .contactInfo .box .text {
+    margin-left: 20px;
+    font-size: 16px;
+    color: rgb(63, 28, 189);
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.container .contactInfo .box .text h2 {
+    font-weight: 300;
+    color: black;
+}
+
+.container .contactInfo .box a {
+    text-decoration: none;
+    color: rgb(243, 81, 81);
+}
+
+.container .contactInfo .box .text h2:hover {
+    font-weight: 500;
+    color: rgb(84, 141, 226);
+}
+
+.contactForm {
+    width: 40%;
+    padding: 60px;
+    height: 40vh;
+   
+}
+
+#feedbackTable{
+    height: 300px;
+    
+  
+  
+}
+#feedbackTable th{
+    font-size: 20px;
+    color: rgb(215, 124, 45);
+   text-shadow: 1px 2px 2px black;
+}
+#feedbackTable th:hover{
+       font-size: 20px;
+        color: #cdef52;
+        text-shadow: 1px 2px 2px black;
+}
+ #fh_name, #fh_email{
+  background-color: #289FED;
+  color: black;
+  text-align: center;
+  width: 90%;
+  height: 24px;
+  border-radius: 4px;
+  font-family: 'Acme', sans-serif;
+  box-shadow: 2px 5px 5px 1px rgb(14, 14, 14);
+
+}
+
+#fh_feedback{
+    background-color: #289FED;
+    color: black;
+    text-align: center;
+    width: 90%;
+    font-family: 'Acme', sans-serif;
+    border-radius: 4px; 
+    font-size: medium;
+    box-shadow: 2px 5px 5px 1px rgb(14, 14, 14);
+    
+}
+#fh_submit{
+    background-color: #2bb9f1;
+    height: 35px;
+    width: 120px;
+     
+ 
+    -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 13px 27px 41px -4px rgba(0,0,0,0.8); 
+    box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 13px 27px 41px -4px rgba(0,0,0,0.8);
+    color: rgb(31, 27, 235); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; text-shadow: 0.2px 0.5px 0.5px black;
+}

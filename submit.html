@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Page</title>
+    <link rel="stylesheet" href="./Files/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        body{
+    height: 100vh;
+    background-color: aquamarine;
+}
+main{
+    height: 89vh;
+}
+#name{
+    /* background-color: darkgoldenrod; */
+    /* height: 5px; */
+    color: red;
+    /* font-size: 10px; */
+    height: 0px;
+    font-size: larger;
+margin-top: 10px;
+background-color: none;
+}
+    </style>
+
+</head>
+<body onload="getName()">
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <li style="background-color: rgb(27, 183, 183);border: 2px solid orangered;"><a href="./submit.html" style="color: rgb(22, 22, 235);">Submit</a></li>
+           
+                <li ><a href="./contact.html" >Contact</a></li>
+                <li class="left" ><a href="./login.html" >Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <marquee behavior="else" direction="right"><h1>Thank You <span id="name" style="background-color: black; color: #f07e0d; text-shadow: 1px 1px 1px  black;  font-family: Georgia, 'Times New Roman', Times, serif;box-shadow: none; font-size: 30px;"></span> </h1></marquee>
+  
+     
+      <h1 id="inst">Your Exam is Sucessfully Submitted <div id="time"></div></h1>
+      <h1 id="inst">Your Total Answer is: <span id="student_result"></span></h1>
+
+</div> 
+    </main>
+    <footer id="footer"><p> ^_^ @copyright: <a href="mailto:atanumajee147@gmail.com" id="aidlast">atanumajee147@gmail.com</a> &copy; ^_^</p></footer>
+    <!-- <script src="system.js"></script> -->
+    <!-- <script src="./Qustions.js"></script> -->
+    <script>
+             // use to real time and date generate
+setInterval(() => {
+    let myTime= new Date();
+    let time = (`${myTime.getHours()}:${myTime.getMinutes()}:${myTime.getSeconds()} at ${myTime.getDay()}/${myTime.getDate()}/${myTime.getFullYear()}`);
+    document.getElementById("time").innerHTML=time;
+  }, 1000);
+
+    </script>
+       <script>
+        var total_marks = localStorage.getItem("total_marks");
+        document.getElementById("student_result").innerHTML = total_marks;
+    </script>
+     <script src="./Files/system.js"></script>
+</body>
+</html>

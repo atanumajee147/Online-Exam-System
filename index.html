@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruction Page</title>
+<link rel="stylesheet" href="./Files/style.css">
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        body{
+    height: 100vh;
+    background-color: aquamarine;}
+
+main{
+    height: 88vh;
+    
+}
+    </style>
+
+</head>
+<body onload="getName()">
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <li style="background-color: rgb(27, 183, 183);border: 2px solid orangered;"><a href="./index.html" style="color: rgb(12, 12, 202);">Instraction</li>
+         
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li class="left"><a href="./sign-up.html" >Sign-Up</a></li>
+                <li class="left" ><a href="./login.html" >Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+       <marquee behavior="else" direction="right"><h1> Hello <span id="name" style="background-color: black; color: #f07e0d; text-shadow: 1px 1px 1px  black;  font-family: Georgia, 'Times New Roman', Times, serif;box-shadow: none; font-size: 34px;"> </span> Welcome to our Exam Center.</h1></marquee>
+  
+     
+      <h1 id="inst">Online Examination in Java Script <div id="time"></div></h1>
+      <br>
+      <div id="maininstrack">
+    <h2 >Read the Instructions than click to agree :  </h2>
+    <br>
+    <ol>
+        <li>The following are instructions that should be placed at the front of your online exam, each distinct for their exam type – they will need to be included to ensure consistent instructions for students and to align with university policies around misconduct. Use the below options as templates, replacing the elements in bold to be specific for your exam sitting. </li>
+        <li>All Questions are mendatory.</li>
+        <li>Total No. of Question is 5.</li>
+        <li>Each Question carry 1 Marks</li>
+        <li>There are no negative marks</li>
+    </ol>
+    <br> <hr>
+    <label for="checkbox"> Read all Instraction and Click to Agree all  
+    <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" ></label><br><br>
+      <button id="startExamBtn">Start Exam</button>
+</div> 
+    </main>
+    <footer id="footer"><p> ^_^ @copyright: <a href="mailto:atanumajee147@gmail.com" id="aidlast">atanumajee147@gmail.com</a> &copy; ^_^</p></footer>
+    <script src="./Files/system.js"></script>
+    
+  <script>
+      // use to real time and date generate
+setInterval(() => {
+    let myTime= new Date();
+    let time = (`${myTime.getHours()}:${myTime.getMinutes()}:${myTime.getSeconds()} at ${myTime.getDay()}/${myTime.getDate()}/${myTime.getFullYear()}`);
+    document.getElementById("time").innerHTML=time;
+  }, 1000);
+
+  </script>
+         <script src="./Files/system.js"></script>
+
+</body>
+</html>

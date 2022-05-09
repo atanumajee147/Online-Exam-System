@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up page</title>
+    <link rel="stylesheet" href="./Files/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+</head>
+<style>
+    body{
+        height: 100vh;
+        background-image: url(./img/login-page-background-images-hd-10.jpg);
+    }
+      main{
+          height: 88.3vh;
+         
+      }
+</style>
+<body>
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./record.html">Record</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li class="left" style="background-color: rgb(27, 183, 183);;border: 2px solid orangered;"><a
+                        href="./sign-up.html" style="color: rgb(22, 22, 235);">Sign-Up</a></li>
+                <li class="left"><a href="./login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <marquee behavior="else" direction="left" id="loginMarquee"><h1> If you have created an account, than login your User id, Otherwise also create an account by going to the sign-up page</h1></marquee>
+
+        <form form onsubmit="event.preventDefault(); register()">
+
+
+            <table id="signUpTable">
+                <thead>
+                    <tr>
+                        <th colspan="2"><b> Registration Form </b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td><label for="name">Name:</td>
+                        <td><input type="name" name="name" id="name" placeholder="Enter Your Name"></td>
+                        </label>
+                    </tr>
+                    <tr>
+
+                        <td><label for="useremail">Email Id:</td>
+                        <td><input type="useremail" name="useremail" id="useremail"
+                                placeholder="Enter Your Email Address"></td>
+                        </label>
+                    </tr>
+                    <tr>
+                    <tr>
+
+                        <td><label for="username">Username:</td>
+                        <td><input type="username" name="username" id="username" placeholder="Enter Your Username"
+                                required></td>
+                        </label>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</td>
+                        <td><input type="password" name="password" id="password" placeholder="Enter Your Password"
+                                required></td>
+                        </label>
+                    </tr>
+                    <tr>
+                        <td><label for="retypepassword">Re-type Password:</td>
+                        <td><input type="password" name="retypepassword" id="retypepassword"
+                                placeholder=" Re Enter Your Password" required></td>
+                        </label>
+                    </tr>
+                    <td><label for="date">Date of Birth:</td>
+                    <td><input type="date" name="date" id="date" placeholder="Enter Your Password" required></td>
+                    </label> </tr>
+                    <tr>
+                        <td colspan="2" align="center"><button type="submit" id="addstudent">Sign-Up</button>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </main>
+    <footer id="footer">
+        <p> ^_^ @copyright: <a href="mailto:atanumajee147@gmail.com" id="aidlast">atanumajee147@gmail.com</a> &copy; ^_^
+        </p>
+    </footer>
+    <!-- <script src="./Files/system.js"></script> -->
+
+
+
+    <script>
+        function register() {
+            let username = document.getElementById("username").value;
+            let name = document.getElementById("name").value;
+            let password = document.getElementById("password").value;
+            let retypepassword = document.getElementById("retypepassword").value;
+            let useremail = document.getElementById("useremail").value;
+            let date = document.getElementById("date").value;
+
+            let student_data_object = {
+                "username": username,
+                "name": name,
+                "date": date,
+                "password": password,
+                "retypepassword": retypepassword,
+                "useremail": useremail,
+            };
+            if (localStorage.getItem("student_data") === null) {
+                var student_data_store_Array = [];
+                student_data_store_Array.push(student_data_object);
+                localStorage.setItem('student_data', JSON.stringify(student_data_store_Array));
+                console.log(student_data_store_Array);
+            } else {
+                var student_data_store_Array = JSON.parse(localStorage.getItem("student_data"));
+                student_data_store_Array.push(student_data_object);
+                localStorage.setItem('student_data', JSON.stringify(student_data_store_Array));
+                console.log(student_data_store_Array);
+            }
+            removeInputData();
+        }
+
+        // one time submit the data than clear the inputBox ....
+        function removeInputData() {  // this function use for only clear input data 
+            let username = document.getElementById("username").value = "";
+            let name = document.getElementById("name").value = "";
+            let password = document.getElementById("password").value = "";
+            let retypepassword = document.getElementById("retypepassword").value = "";
+            let useremail = document.getElementById("useremail").value = "";
+            let date = document.getElementById("date").value = "";
+
+        }
+    </script>
+</body>
+
+</html>

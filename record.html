@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record page</title>
+    <link rel="stylesheet" href="./Files/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            height: 100vh;
+            background-color: aquamarine;
+        }
+
+        main {
+            height: 83vh;
+        }
+
+        #student_data_table {
+            margin: 5vh 8vw;
+            background: cornflowerblue;
+            height: 45vh;
+            width: 84vw;
+            color: black;
+           
+          
+        }
+
+        #student_data_table th {
+            background: rgb(80, 147, 241);
+       border-radius: 4px;
+         font-size: 24px;
+            border: 2px solid black;
+            text-shadow: 0.2px 0.5px 0.5px red ;
+        }
+
+        #student_data_table th:hover {
+            background: rgb(212, 183, 37);
+
+            border: 2px solid rgb(214, 63, 63);
+        }
+
+        #student_data_table td:hover {
+            background: rgb(105, 223, 26);
+            text-align: center;
+            font-size: 20px;
+           
+            border: 2px double rgb(38, 229, 194);
+           
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        #student_data_table td {
+            background: rgb(5, 103, 136);
+            text-align: center;
+            border: 2px solid rgb(20, 21, 21);
+         font-size: 20px;
+         color: #ed7717;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        #searchBar {
+            background-color: black;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+            margin: 4px 10px;
+            color: rgb(234, 219, 15);
+
+
+            font-variant: small-caps;
+
+            text-shadow: 1px 1px 1px rgb(75, 76, 75);
+           font-size:15px;
+            border: 2px solid rgb(236, 122, 29);
+            border-radius: 4px;
+            box-shadow: 3px 3px 3px rgb(70, 210, 23);
+        }
+
+      
+        #searchButton {
+            padding: 10px;
+            width: 70px;
+            background-color: rgb(70, 210, 23);
+            color: wheat;
+            box-shadow: 3px 3px 3px rgb(70, 210, 23);
+
+            font-variant: small-caps;
+
+            text-shadow: 1px 1px 1px rgb(186, 58, 26);
+            margin: 1px 4px;
+            border-radius: 4px;
+        }
+        #searchButton:hover {
+            padding: 10px;
+            width: 70px;
+            background-color: rgb(70, 210, 23);
+            color: rgb(223, 61, 21);
+            box-shadow: 3px 3px 3px rgb(70, 210, 23);
+
+            font-variant: small-caps;
+
+            box-shadow: 3px 3px 3px orange;
+            margin: 1px 4px;
+            border-radius: 4px;
+        }
+          
+        #edButtos {
+            background-color: aquamarine;
+            height: auto;
+            width: 80%;
+            height: 80%;
+            /* border: 2px solid black; */
+            border-radius: 20%;
+        }
+        #edButtos:hover {
+            background-color: rgb(27, 201, 213);
+            height: auto;
+            width: 80%;
+            height: 80%;
+            /* border: 2px solid black; */
+            border-radius: 20%;
+        }
+   
+        #student_data_table::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+#student_data_table::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+#student_data_table::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+    </style>
+</head>
+
+<body onload="all_student_data()">
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <li style="background-color: rgb(27, 183, 183);;border: 2px solid orangered;"><a href="./record.html"
+                        style="color: rgb(22, 22, 235);">Record</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li style="background-color: rgb(241, 114, 28);border: 2px solid rgb(18, 98, 236);"><a
+                        href="./record.html" style="color: rgb(22, 236, 168);" onclick="clearList()">Clear Records</a>
+                </li>
+                <input type="search" id="searchBar" placeholder="Type a Name and Search" onclick="TableData()">
+                <input type="button" id="searchButton" value="Search"  onclick="searchByName()">
+                <li class="left"><a href="sign-up.html">Sign-Up</a></li>
+                <li class="left"><a href="./login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+
+        <div id="student_data_Table_display">
+
+        </div>
+
+
+
+    </main>
+    <footer id="footer">
+        <p> ^_^ @copyright: <a href="mailto:atanumajee147@gmail.com" id="aidlast">atanumajee147@gmail.com</a> &copy; ^_^
+        </p>
+    </footer>
+
+
+    <script>
+        function all_student_data() {
+            console.log("my name is Atanu");
+            let this_data = "<table  id='student_data_table'>";
+
+            if (localStorage.getItem("student_data") === null) {
+                this_data = this_data + "<tr>";
+                this_data = this_data + "<th colspan='6'>No Record Founds</th>";
+
+                this_data = this_data + "</tr>";
+            } else {
+                let student_data_store_Array = JSON.parse(localStorage.getItem("student_data"));
+                this_data = this_data + "<tr>";
+                this_data = this_data + "<th colspan='7'>Student Data Record Table </th>";
+
+                this_data = this_data + "</tr>";
+                this_data = this_data + "<tr>";
+                this_data = this_data + "<th>Username</th>";
+                this_data = this_data + "<th>Name</th>";
+                this_data = this_data + "<th>Password</th>";
+                this_data = this_data + "<th>Re-Enter-Password</th>";
+                this_data = this_data + "<th>Email</th>";
+                this_data = this_data + "<th>Date of Birth</th>";
+                this_data = this_data + "<th>Action</th>";
+                this_data = this_data + "</tr>";
+                for (i = 0; i < student_data_store_Array.length; i++) {
+                    this_data = this_data + "<tr>";
+                    this_data = this_data + "<td>" + student_data_store_Array[i].username + "</td>";
+                    this_data = this_data + "<td>" + student_data_store_Array[i].name + "</td>";
+                    this_data = this_data + "<td>" + student_data_store_Array[i].password + "</td>";
+                    this_data = this_data + "<td>" + student_data_store_Array[i].retypepassword + "</td>";
+                    this_data = this_data + "<td>" + student_data_store_Array[i].useremail + "</td>";
+                    this_data = this_data + "<td>" + student_data_store_Array[i].date + "</td>";
+                    this_data = this_data + "  <td><button  id='edButtos' style='color:red'  onclick='deleteRecord(this)'> Delete </button></td>";
+                    this_data = this_data + "</tr>";
+                }    
+                this_data = this_data + "</table>";
+
+                console.log("student_data: " + student_data_store_Array.length);
+                document.getElementById('student_data_Table_display').innerHTML = this_data;
+            }
+        }
+       
+ // use to delete one by one rows 
+
+
+        function deleteRecord(btn) {
+            let tr = btn.parentElement.parentElement;
+            let td = tr.getElementsByTagName("td")[0];
+            let username = td.innerHTML;
+            //alert(regno);
+
+            if (confirm(`Are you sure to delete :- ${username}`)) {
+                let OtherStudent_Array = [];
+				
+                if (localStorage.getItem("student_data") === null) {
+                    OtherStudent_Array  = [];
+                } else {
+                    let student_data_store_Array = JSON.parse(localStorage.getItem("student_data"));
+
+                    for (i = 0; i < student_data_store_Array.length; i++) {
+                        if (student_data_store_Array[i].username != username) {
+                            OtherStudent_Array.push(student_data_store_Array[i]);
+                        }
+                    }
+
+                    localStorage.clear();
+                    localStorage.setItem('student_data', JSON.stringify(OtherStudent_Array));
+
+                    alert(`${username} is Deleted.`);
+                    all_student_data();
+                 
+                }
+            }
+        }
+
+        
+
+
+        // create a function to clear all table data from the localStorage 
+
+        function clearList() {
+            if (confirm("Are u sure to  clear the all data !"));
+            localStorage.clear();
+
+        }
+
+        // use to search the table items ....
+        function searchByName() {
+            //use to data fatch from Search box (this Search Bar id )
+            let input = document.getElementById("searchBar").value;
+
+            // use to Identify the table (search table id )
+            let student_data_table = document.getElementById("student_data_table");
+
+            //Now find the No. of rows in the table
+            let TableRow = student_data_table.getElementsByTagName("tr");
+            // use to chatch the row when you search 
+            for (i = 0; i < TableRow.length; i++) {
+                //Find that td is available or not in the current Row
+                let ItemName = TableRow[i].getElementsByTagName("td")[1];
+                // let ItemName = TableRow[i].getElementsByTagName("td")[0];
+
+                if (ItemName) {
+                    let item = ItemName.innerHTML;
+                    let input_len = input.length;
+                    let data = item.slice(0, input_len);
+
+                    if (data == input) {
+                        TableRow[i].style.display = "";
+                    } else {
+                        TableRow[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

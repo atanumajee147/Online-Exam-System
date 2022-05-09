@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./Files/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+    body{
+    height: 100vh;
+    background-color: aquamarine;
+}
+main{
+    height: 88.5vh;
+    background-image: url(./img/login-page-background-images-hd-10.jpg);
+}
+    </style>
+</head>
+<body>
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./record.html">Record</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./contact.html">Contact-Us</a></li>
+                <li class="left"><a href="sign-up.html" >Sign-Up</a></li>
+                <li class="left" style="background-color: rgb(27, 183, 183);;border: 2px solid orangered;"><a href="./login.html" style="color: rgb(22, 22, 235);">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <marquee behavior="else" direction="left" id="loginMarquee"><h1> If you have created an account, than login your User id, Otherwise also create an account by going to the sign-up page</h1></marquee>
+        <form onsubmit="event.preventDefault(); login()">
+          <table  id="loginTable">
+              <thead>
+                  <tr>
+                      <th colspan="2">Login Form</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+             <td><label for="username">Username:</td>
+             <td><input type="username" name="username" id="username" placeholder="Enter Your Username" required></td>
+            </label> </tr>
+            <tr>
+             <td><label for="password">Password:</td>
+             <td><input type="password" name="password" id="password" placeholder="Enter Your Password" required></td>
+            </label> </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Login" name="submit" id="LoginButton" ></td>
+            </tr>
+              </tbody>
+          </table>
+        </form>
+           <h1 id="rongPassword"> </h1>
+    </main>
+    <footer id="footer"><p> ^_^ @copyright: <a href="mailto:atanumajee147@gmail.com" id="aidlast">atanumajee147@gmail.com</a> &copy; ^_^</p></footer>
+    <script src="./Files/system.js"></script>
+</body>
+</html>

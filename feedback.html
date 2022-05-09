@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Record</title>
+    <link rel="stylesheet" href="./Files/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            height: 100vh;
+            background-color: aquamarine;
+        }
+
+        main {
+            height: 87.8vh;
+        }
+
+        #deleteFb {
+            background-color: aquamarine;
+            height: auto;
+            width: 80%;
+            height: 80%;
+            /* border: 2px solid black; */
+            border-radius: 20%;
+        }
+
+        #deleteFb:hover {
+            background-color: rgb(27, 201, 213);
+            height: auto;
+            width: 80%;
+            height: 80%;
+            /* border: 2px solid black; */
+            border-radius: 20%;
+        }
+        
+        #Feedback_search {
+            background-color: black;
+            padding: 8px;
+            width: 250px;
+            text-align: center;
+            margin: 4px 10px;
+            color: rgb(234, 219, 15);
+
+
+            font-variant: small-caps;
+
+            text-shadow: 1px 1px 1px rgb(75, 76, 75);
+           font-size:15px;
+            border: 2px solid rgb(236, 122, 29);
+            border-radius: 4px;
+            box-shadow: 3px 3px 3px rgb(70, 210, 23);
+        }
+
+      
+        #Feedback_searchButton {
+            padding: 10px;
+            width: 70px;
+            background-color: rgb(225, 127, 51);
+            color: wheat;
+            box-shadow: 3px 3px 3px rgb(70, 210, 23);
+
+            font-variant: small-caps;
+
+            text-shadow: 1px 1px 1px rgb(186, 58, 26);
+            margin: 1px 4px;
+            border-radius: 4px;
+        }
+        #Feedback_searchButton:hover {
+            padding: 10px;
+            width: 70px;
+            background-color: rgb(49, 146, 225);
+            color: rgb(223, 61, 21);
+            box-shadow: 2px 1px 2px rgb(5, 16, 1);
+
+            font-variant: small-caps;
+
+            box-shadow: 3px 3px 3px orange;
+            margin: 1px 4px;
+            border-radius: 4px;
+        }
+          #Feedback_data_Table{
+              margin: 5vh 15vw;
+              height: 40vh;
+              width: 70vw;
+              position: fixed;
+              overflow: scroll;
+              background-color: rgb(239, 151, 18);
+            box-shadow: 2px 5px 10px 5px black;
+          }
+          #Feedback_data_Table td{
+             align-items: center;
+              text-align: center;
+              background-color: rgb(38, 200, 221);
+          }
+          #Feedback_data_Table th{
+             
+              
+              background-color: rgb(20, 115, 240);
+          }
+    </style>
+</head>
+
+<body onload="all_feedback_data()">
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <li style="background-color: rgb(27, 183, 183);;border: 2px solid orangered;"><a href="./feedback.html"
+                        style="color: rgb(22, 22, 235);">Feedback</a></li>
+                <li><a href="./record.html">Record </a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li style="background-color: rgb(241, 114, 28);border: 2px solid rgb(18, 98, 236);"><a
+                        href="./feedback.html" style="color: rgb(22, 236, 168);" onclick="clearFeedbacks()">Clear
+                        Feedbacks</a>
+                </li>
+                <input type="search" id="Feedback_search" placeholder="Type a Name and Search" onclick="TableData()">
+                <input type="button" id="Feedback_searchButton" value="Search" onclick="searchFeedback_name()">
+                <li class="left"><a href="sign-up.html">Sign-Up</a></li>
+                <li class="left"><a href="./login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+
+        <div id="feedback_Table_display">
+
+        </div>
+
+
+
+    </main>
+    <footer id="footer">
+        <p> ^_^ @copyright: <a href="mailto:atanumajee147@gmail.com" id="aidlast">atanumajee147@gmail.com</a> &copy; ^_^
+        </p>
+    </footer>
+
+
+    <script>
+        function all_feedback_data() {
+            console.log("my name is Atanu");
+            let receve_feedback = "<table  id='Feedback_data_Table' border='2'>";
+
+            if (localStorage.getItem("Feedback_data") === null) {
+                receve_feedback = receve_feedback + "<tr>";
+                receve_feedback = receve_feedback + "<th colspan='6'>No Record Founds</th>";
+
+                receve_feedback = receve_feedback + "</tr>";
+            } else {
+                feedback_store_Array = JSON.parse(localStorage.getItem("Feedback_data"));
+                receve_feedback = receve_feedback + "<tr>";
+                receve_feedback = receve_feedback + "<th colspan='7'>Receved Feedbacks  </th>";
+
+                receve_feedback = receve_feedback + "</tr>";
+                receve_feedback = receve_feedback + "<tr>";
+                receve_feedback = receve_feedback + "<th>No</th>";
+                receve_feedback = receve_feedback + "<th>Name</th>";
+                receve_feedback = receve_feedback + "<th>Email</th>";
+                receve_feedback = receve_feedback + "<th>Feedback</th>";
+                receve_feedback = receve_feedback + "<th>Action</th>";
+
+
+                receve_feedback = receve_feedback + "</tr>";
+                for (i = 1; i < feedback_store_Array.length; i++) {
+                    receve_feedback = receve_feedback + "<tr>";
+                    receve_feedback = receve_feedback + "<td>" + i + "</td>";
+                    receve_feedback = receve_feedback + "<td>" + feedback_store_Array[i].fh_name + "</td>";
+                    receve_feedback = receve_feedback + "<td>" + feedback_store_Array[i].fh_email + "</td>";
+                    receve_feedback = receve_feedback + "<td>" + feedback_store_Array[i].fh_feedback + "</td>";
+                    receve_feedback = receve_feedback + "<td><button  id='deleteFb' style='color:red'  onclick='deleteFeedback(this)'> Delete </button></td>";
+                    receve_feedback = receve_feedback + "</tr>";
+
+                }
+                receve_feedback = receve_feedback + "</table>";
+
+                console.log("Feedback_data: " + feedback_store_Array.length);
+                document.getElementById('feedback_Table_display').innerHTML = receve_feedback;
+            }
+        }
+
+        // one by one delete list 
+        function deleteFeedback(btn) {
+            let tr = btn.parentElement.parentElement;
+            let td = tr.getElementsByTagName("td")[1];
+            let fh_name = td.innerHTML;
+            //alert(regno);
+
+            if (confirm(`Are you sure to delete :- ${fh_name}`)) {
+                let delt_feedback_array = [];
+
+                if (localStorage.getItem("Feedback_data") === null) {
+                    delt_feedback_array = [];
+                } else {
+                    let feedback_store_Array = JSON.parse(localStorage.getItem("Feedback_data"));
+
+                    for (i = 0; i < feedback_store_Array.length; i++) {
+                        if (feedback_store_Array[i].fh_name != fh_name) {
+                            delt_feedback_array.push(feedback_store_Array[i]);
+                        }
+                    }
+                    localStorage.clear();
+                    localStorage.setItem('Feedback_data', JSON.stringify(delt_feedback_array));
+
+                    alert(`${fh_name} is Deleted.`);
+                    all_feedback_data();
+
+                }
+            }
+        }
+
+
+
+
+        // create a function to clear all table data from the localStorage 
+
+        function clearFeedbacks() {
+            if (confirm("Are you sure to delete all feedbacks !")) { localStorage.clear(); }
+
+
+        }
+
+        // use to search the table items ....
+        function searchFeedback_name() {
+            //use to data fatch from Search box (this Search Bar id )
+            let input = document.getElementById("Feedback_search").value;
+
+            // use to Identify the table (search table id )
+            let Feedback_data_Table = document.getElementById("Feedback_data_Table");
+
+            //Now find the No. of rows in the table
+            let TableRow = Feedback_data_Table.getElementsByTagName("tr");
+            // use to chatch the row when you search 
+            for (i = 0; i < TableRow.length; i++) {
+                //Find that td is available or not in the current Row
+                let ItemName = TableRow[i].getElementsByTagName("td")[1];
+                // let ItemName = TableRow[i].getElementsByTagName("td")[0];
+
+                if (ItemName) {
+                    let item = ItemName.innerHTML;
+                    let input_len = input.length;
+                    let data = item.slice(0, input_len);
+
+                    if (data == input) {
+                        TableRow[i].style.display = "";
+                    } else {
+                        TableRow[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

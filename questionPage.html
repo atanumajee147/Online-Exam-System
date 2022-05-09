@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Page</title>
+    <link rel="stylesheet" href="./Files/style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        #time {
+            color: burlywood;
+        }
+    </style>
+    <style>
+        body {
+            height: 100vh;
+            background-color: aquamarine;
+        }
+
+        main {
+            height: 88vh;
+        }
+
+        #cnTime {
+            border: 2px solid black;
+            text-decoration: none;
+            font-size: medium;
+            box-shadow: none;
+        }
+
+        #cnTime:hover {
+            border: 2px solid black;
+            text-decoration: none;
+            font-size: medium;
+            color: red;
+            background-color: black;
+            box-shadow: none;
+        }
+
+        #cnTime #Mtime {
+            border: none;
+            color: red;
+            font-size: 15px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-shadow: 0.3px 0.3px 0.3px rgb(82, 233, 41);
+        }
+
+        #name {
+            /* background-color: darkgoldenrod; */
+            /* height: 5px; */
+            color: #f07e0d;
+
+            width: 180%;
+            height: 0px;
+            font-size: 30px;
+            margin-top: 8px;
+            text-shadow: 2px 2px 6px  rgb(20, 20, 20);
+           
+        }
+        #qno, #question, #lequestion{
+            color: blue;
+            font-size: 25px;
+        }
+        ol{
+            margin: 2vw 3vw;
+            font-size: 22px;
+            color: black;
+              text-align: left;
+        }
+        #student_choose1,#student_choose2,#student_choose3,#student_choose4{
+            margin: 0px 10px ;
+        }
+        input[type='radio'] {
+           
+        width: 18px;
+        height: 18px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #ffa500;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid rgb(220, 76, 76);
+        
+       
+    }
+        input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color:rgb(231, 132, 61);
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+        box-shadow: 0.8px 1px 1px 1.2px black;
+    }
+
+    </style>
+
+</head>
+
+<body onload="displayQuestion();getName();">
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <li style="background-color: rgb(27, 183, 183);border: 2px solid rgb(49, 41, 38);"><a href="#"
+                        style="color: rgb(225, 24, 24);">Cancel</a></li>
+
+                <li class="left" id="cnTime">
+                    <div id="Mtime">05:00</div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 id="name" style="float: right;"></h1>
+        <h1 id="inst"> Online Examination in Java Script</h1>
+        <hr>
+        <div class="myquestionsClass">
+            <h3  id="lequestion">Question no: <span id="qno"> 1</span>) <span id="question">What is your feberate game?</span>
+            </h3>
+            <ol type="A">
+                <li><input type="radio"  name="student_choose" id="student_choose1"><span id="option_no1"> Football</span></li>
+                <li><input type="radio" name="student_choose" id="student_choose2"><span id="option_no2"> Cram</span></li>
+                <li><input type="radio" name="student_choose" id="student_choose3"><span id="option_no3"> Kabadi</span></li>
+                <li><input type="radio" name="student_choose" id="student_choose4"><span id="option_no4"> None of the Above</span></li>
+            </ol>
+            <div class="bSameLine">
+                <button onclick="previousButtonFun()" id="previousButton">Previous Question</button>
+                <button onclick="nextButtonFun()" id="nextButton">Next Question</button>
+                <button onclick="finalButtonFun()" id="finalButton">Final Submit</button>
+            </div>
+    </main>
+    <footer id="footer">
+        <p> ^_^ @copyright: <a href="mailto:atanumajee147@gmail.com" id="aidlast">atanumajee147@gmail.com</a> &copy; ^_^
+        </p>
+    </footer>
+    <script>
+        
+startTimer(60 * 5);
+
+// Count Down Timer
+function startTimer(duration) {
+  var timer = duration,
+      minutes, seconds;
+  var x = setInterval(function() {
+      minutes = parseInt(timer / 60);
+      seconds = parseInt(timer % 60);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      document.getElementById('Mtime').innerHTML = "Time Left: " + minutes + ":" + seconds;
+
+      if (--timer < 0) {
+          clearInterval(x);
+          finalButton()
+      }
+  }, 1000);
+}
+    </script>
+    <script src="./Files/system.js"></script>
+
+</body>
+
+</html>

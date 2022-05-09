@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-Me</title>
+   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./Files/style.css">
+</head>
+<style>
+    body {
+        height: 100vh;
+
+    }
+
+    main {
+        height: 86vh;
+        background-image: url(./img/4.jpg);
+        background-size: 100vw 44vw;
+        background-repeat: no-repeat;
+
+    }
+
+    .fb {
+        background-color: rgb(27, 183, 183);
+        border: 2px solid orangered;
+    }
+
+    .fbn {
+        color: blue;
+    }
+</style>
+
+<body>
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./record.html">Record</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li class="fb"><a href="./contact.html" class="fbn">Contact</a></li>
+                <li class="left"><a href="./sign-up.html">Sign-up</a></li>
+                <li class="left"><a href="./login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+
+            <marquee behavior="else" direction="left">
+                <h1>Your Opinion is improtant to us.This way we can keep improving our webside..</h1>
+            </marquee>
+        </div>
+        <div id="yourfeedBack">
+
+
+            <div class="container">
+                <div class="contactInfo">
+                    <div class="box">
+                        <div class="icon">
+                            <a href="#"><img src="./img/map.png" alt="map" height="25px"></a>
+                        </div>
+                        <div class="text">
+                            <h2>Address</h2>
+                            <p>
+                                <a
+                                    href="https://www.google.co.in/maps/place/Doctor+Chamber/@23.5484072,86.7553114,17z/data=!3m1!4b1!4m5!3m4!1s0x39f6e570a6f3d693:0xa74ee10884394006!8m2!3d23.5484072!4d86.7575001?hl=en&authuser=0">Bagicha,Godibero,Raghunathpur,Purulia,723133</a>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <a href="#"><img src="./img/mail.png" alt="mail" height="25px"></a>
+                        </div>
+                        <div class="text">
+                            <h2>Email</h2>
+                            <p>
+                                <a href="mailto:atanumajee147@gmail.com">atanumajee147@gmail.com</a>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <a href="#"><img src="./img/github.png" alt="GitHub" height="25px"></a>
+                        </div>
+                        <div class="text">
+                            <h2>GitHub</h2>
+                            <p>
+                                <a href="http://www.github.com/atanumajee147">github.com/atanumajee147</a>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <a href="#"><img src="./img/call.png" alt="call" height="25px"></a>
+                        </div>
+                        <div class="text">
+                            <h2>Phone no</h2>
+                            <p>
+                                <a href="tel:+9679306200">9679306200</a> , <a href="tel:+8389033573">8389033573</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contactForm">
+                    <form onsubmit="event.preventDefault(); inputFeedbackTable()">
+                        <table id="feedbackTable">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        <h2>Send Feedback</h2>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th><label for="fh_name">Enter Your Name:</th>
+                                    <td><input type="text" name="fh_name" id="fh_name"
+                                            placeholder="Enter Your Full Name" required></td>
+                                    </label>
+                                </tr>
+                                <tr>
+                                    <th><label for="fh_email">Enter Your Email:</th>
+                                    <td><input type="email" name="fh_email" id="fh_email"
+                                            placeholder="Enter Your Email Address" required></td>
+                                    </label>
+                                </tr>
+                                <tr>
+                                    <th><label for="fh_feedback">Write your Feedback:</th>
+                                    <td><textarea rows="5" cols="40" required name="fh_feedback" id="fh_feedback"
+                                            placeholder="Place Write your Feedback"></textarea></label>
+                                </tr>
+                                <tr>
+                                    <th colspan="5"><input type="submit" value="Submit" id="fh_submit"></th>
+
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <!-- </section> -->
+        </div>
+
+<center>
+
+    <a href="https://www.github.com/atanumajee147/" target="blank"> <img src="./img/github.png" alt="github" height="60px" width="60px"></a>
+    <a href="https://www.linkedin.com/in/atanumajee147/" target="blank"> <img src="./img/linkedin.png" alt="linkedin" height="80px" width="80px"></a>
+    <a href="mailto:atanumajee147/" target="blank"> <img src="./img/mail.png" alt="mail" height="60px" width="60px"></a>
+    <a href="https://www.facebook.com/atanumajee147/" target="blank"> <img src="./img/facebook.png" alt="facebook" height="80px" width="80px"></a>
+    <a href="https://www.twtter.com/atanumajee147/" target="blank"> <img src="./img/twtter.png" alt="twtter" height="80px" width="80px"></a>
+    <a href="https://www.instagram.com/atanumajee147/" target="blank"> <img src="./img/instagram.png" alt="twtter" height="60px" width="60px"></a>
+
+</center>
+
+
+    </main>
+    <footer id="footer">
+      <p>  <a href="mailto:atanumajee147@gmail.com" style="float: left; margin-left: 20px;"><img src="./img/xm.png" alt="icon of the web" height="20px "></a>  <a href="mailto:atanumajee147@gmail.com" style="float: right; margin-right: 20px;"><img src="./img/xm.png" alt="icon of the web" height="20px "></a> ^_^ @copyright: <a href="mailto:atanumajee147@gmail.com" id="aidlast">atanumajee147@gmail.com</a> &copy; ^_^
+        </p>
+    </footer>
+
+    <script>
+
+        // create a onsubmit function 
+        function inputFeedbackTable() {
+            // all id are  create  variables
+            let fh_name = document.getElementById("fh_name").value;
+            let fh_email = document.getElementById("fh_email").value;
+            let fh_feedback = document.getElementById("fh_feedback").value;
+
+            // all data are store in a array
+             let  feedback_store_Object={
+                // "no": (feedback_store_Array.length) + 1,
+                 "fh_name":fh_name,
+                 "fh_email":fh_email,
+                 "fh_feedback":fh_feedback
+
+             };
+
+
+    
+             if (localStorage.getItem("Feedback_data") === null) {
+               let feedback_store_Array = [];
+                feedback_store_Array.push(feedback_store_Object);
+                localStorage.setItem('Feedback_data', JSON.stringify(feedback_store_Array));
+                // console.log(feedback_store_Array);
+            } else {
+                feedback_store_Array = JSON.parse(localStorage.getItem("Feedback_data"));
+               
+                feedback_store_Array.push(feedback_store_Object);
+                localStorage.setItem('Feedback_data', JSON.stringify(feedback_store_Array));
+                console.log(feedback_store_Array);
+            }
+
+
+            // call the input data clear function
+            feedback_input_remove();
+
+
+        }
+
+
+        // we are create this function to clear all input data.....
+        function feedback_input_remove() {
+            let fh_name = document.getElementById("fh_name").value = "";
+            let fh_email = document.getElementById("fh_email").value = "";
+            let fh_feedback = document.getElementById("fh_feedback").value = "";
+        }
+
+
+        
+       
+            //  console.log(feedback_store_Array);
+            //  console.log(feedback_store_Array.length);
+
+
+            //  create localString to save all input data in broswer ...
+/*
+            if (localStorage.getItem("Feedback_data") == null) {
+                feedback_store_Array = [];
+                feedback_store_Array.push([fh_name, fh_email, fh_feedback]);
+                localStorage.setItem('Feedback_data', JSON.stringify(feedback_store_Array));
+                // console.log(feedback_store_Array);
+            } else {
+                feedback_store_Array = JSON.parse(localStorage.getItem("Feedback_data"));
+                feedback_store_Array = [];
+                feedback_store_Array.push([fh_name, fh_email, fh_feedback]);
+                localStorage.setItem('Feedback_data', JSON.stringify(feedback_store_Array));
+                console.log(feedback_store_Array);
+            }
+
+*/
+
+    </script>
+
+
+</body>
+
+</html>
+
